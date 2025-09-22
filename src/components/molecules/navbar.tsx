@@ -17,9 +17,9 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 const navItems = [
-  { href: "/belajar", label: "Materi" },
+  { href: "/learn", label: "Learn" },
   { href: "/goals", label: "Goals" },
-  { href: "/tentang", label: "Tentang" },
+  { href: "/about", label: "Tentang" },
 ]
 
 export function Navbar() {

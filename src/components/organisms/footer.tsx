@@ -7,12 +7,12 @@ import { Github, Twitter, Instagram, Mail } from "lucide-react"
 
 const footerLinks = {
   Pembelajaran: [
-    { href: "/belajar", label: "Semua Materi" },
+    { href: "/learn", label: "Semua Materi" },
     { href: "/goals", label: "Learning Goals" },
     { href: "/profile", label: "Progress Saya" },
   ],
   Tentang: [
-    { href: "/tentang", label: "Tentang FEnthusiast" },
+    { href: "/about", label: "Tentang FEnthusiast" },
     { href: "/mentor", label: "Tim Mentor" },
     { href: "/karir", label: "Karir" },
   ],

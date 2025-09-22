@@ -268,7 +268,7 @@ export default function ProfilePage() {
                   <Button
                     className="w-full justify-start bg-transparent"
                     variant="outline"
-                    onClick={() => router.push("/belajar")}
+                    onClick={() => router.push("/learn")}
                   >
                     <BookOpen className="w-4 h-4 mr-2" />
                     Lanjutkan Belajar

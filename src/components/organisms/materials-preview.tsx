@@ -113,13 +113,13 @@ export function MaterialsPreview() {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-full">
                       <DropdownMenuItem asChild>
-                        <Link href={`/belajar/${material.slug}?type=video`} className="flex items-center">
+                        <Link href={`/learn/${material.slug}?type=video`} className="flex items-center">
                           <Play className="mr-2 h-4 w-4" />
                           Lihat Video
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
-                        <Link href={`/belajar/${material.slug}?type=text`} className="flex items-center">
+                        <Link href={`/learn/${material.slug}?type=text`} className="flex items-center">
                           <FileText className="mr-2 h-4 w-4" />
                           Lihat Materi (Text)
                         </Link>
@@ -140,7 +140,7 @@ export function MaterialsPreview() {
           viewport={{ once: true }}
         >
           <Button size="lg" asChild>
-            <Link href="/belajar">Lihat Semua Materi</Link>
+            <Link href="/learn">Lihat Semua Materi</Link>
           </Button>
         </motion.div>
       </div>

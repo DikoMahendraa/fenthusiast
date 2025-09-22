@@ -171,7 +171,7 @@ export default function LearningPage() {
     const nextMaterial = materials[currentIndex + 1]
 
     if (nextMaterial) {
-      router.push(`/belajar/${params["nama-materi"]}/${nextMaterial.id}?type=${viewType}`)
+      router.push(`/learn/${params["nama-materi"]}/${nextMaterial.id}?type=${viewType}`)
     }
   }
 
@@ -180,7 +180,7 @@ export default function LearningPage() {
     const prevMaterial = materials[currentIndex - 1]
 
     if (prevMaterial) {
-      router.push(`/belajar/${params["nama-materi"]}/${prevMaterial.id}?type=${viewType}`)
+      router.push(`/learn/${params["nama-materi"]}/${prevMaterial.id}?type=${viewType}`)
     }
   }
 
@@ -196,7 +196,7 @@ export default function LearningPage() {
           materials={materials}
           currentMaterialId={materialId}
           onMaterialSelect={(id) => {
-            router.push(`/belajar/${params["nama-materi"]}/${id}?type=${viewType}`)
+            router.push(`/learn/${params["nama-materi"]}/${id}?type=${viewType}`)
           }}
         />
 
@@ -205,7 +205,7 @@ export default function LearningPage() {
           <div className="sticky top-0 z-10 bg-background/95 backdrop-blur border-b p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-                <Button variant="ghost" size="sm" onClick={() => router.push("/belajar")}>
+                <Button variant="ghost" size="sm" onClick={() => router.push("/learn")}>
                   <ChevronLeft className="w-4 h-4 mr-1" />
                   Kembali
                 </Button>

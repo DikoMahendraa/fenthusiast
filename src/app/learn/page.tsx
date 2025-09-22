@@ -416,7 +416,7 @@ export default function MaterialsPage() {
                                   ))}
                                 </div>
                                 <Button asChild className="w-full">
-                                  <Link href={`/belajar/frontend/${material.slug}?type=${material.type}`}>
+                                  <Link href={`/learn/frontend/${material.slug}?type=${material.type}`}>
                                     Mulai Belajar
                                   </Link>
                                 </Button>
@@ -465,7 +465,7 @@ export default function MaterialsPage() {
                                         </Badge>
                                       </div>
                                       <Button asChild>
-                                        <Link href={`/belajar/frontend/${material.slug}?type=${material.type}`}>
+                                        <Link href={`/learn/frontend/${material.slug}?type=${material.type}`}>
                                           Mulai Belajar
                                         </Link>
                                       </Button>

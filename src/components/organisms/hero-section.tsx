@@ -67,14 +67,14 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Button size="lg" asChild className="group">
-              <Link href="/belajar">
+              <Link href="/learn">
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Mulai Belajar
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="/tentang">
+              <Link href="/about">
                 <BookOpen className="mr-2 h-5 w-5" />
                 Pelajari Lebih Lanjut
               </Link>

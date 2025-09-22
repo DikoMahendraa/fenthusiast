@@ -12,7 +12,7 @@ export function MobileNav() {
 
   const menuItems = [
     { href: "/", label: "Home", icon: Home },
-    { href: "/belajar", label: "Learning", icon: BookOpen },
+    { href: "/learn", label: "Learning", icon: BookOpen },
     { href: "/goals", label: "Goals", icon: Target },
     { href: "/profile", label: "Profile", icon: User },
   ]
