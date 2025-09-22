@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Navbar } from "@/components/molecules/navbar"
+import { cn } from "@/lib/utils"
 
 // Mock materials data
 const allMaterials = [
@@ -124,6 +125,7 @@ const categories = ["Semua", "Git", "HTML", "CSS", "TailwindCSS", "SCSS", "JavaS
 const levels = ["Semua Level", "Beginner", "Intermediate", "Advanced"]
 
 export default function MaterialsPage() {
+  const isLogin = false
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("Semua")
   const [selectedLevel, setSelectedLevel] = useState("Semua Level")
@@ -192,12 +194,12 @@ export default function MaterialsPage() {
 
         {/* Stats */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
+          className={cn("grid gap-4 mb-8", isLogin ? "grid-cols-2 md:grid-cols-4" : "grid-cols-2 md:grid-cols-3")}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <Card>
+          <Card className="col-span-2 md:col-span-1">
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-primary">{stats.total}</div>
               <div className="text-sm text-muted-foreground">Total Materi</div>
@@ -215,12 +217,16 @@ export default function MaterialsPage() {
               <div className="text-sm text-muted-foreground">Text</div>
             </CardContent>
           </Card>
-          <Card>
-            <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.completed}</div>
-              <div className="text-sm text-muted-foreground">Selesai</div>
-            </CardContent>
-          </Card>
+          {
+            isLogin && (
+              <Card>
+                <CardContent className="p-4 text-center">
+                  <div className="text-2xl font-bold text-primary">{stats.completed}</div>
+                  <div className="text-sm text-muted-foreground">Selesai</div>
+                </CardContent>
+              </Card>
+            )
+          }
         </motion.div>
 
         {/* Filters */}
@@ -234,14 +240,14 @@ export default function MaterialsPage() {
             <CardContent className="p-6">
               <div className="flex flex-col lg:flex-row gap-4">
                 {/* Search */}
-                <div className="flex-1">
-                  <div className="relative">
+                <div className="flex-1 items-center flex rounded-lg overflow-hidden lg:px-2">
+                  <div className="relative w-full">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                     <Input
                       placeholder="Cari materi, topik, atau tag..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-10"
+                      className="pl-10 bg-white border-0 focus:ring-0 focus:ring-offset-0 active:border active:ring-0 shadow-none"
                     />
                   </div>
                 </div>
@@ -361,7 +367,7 @@ export default function MaterialsPage() {
                           transition={{ duration: 0.3, delay: index * 0.05 }}
                         >
                           {viewMode === "grid" ? (
-                            <Card className="h-full hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20 group">
+                            <Card className="h-full hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20 group pt-0">
                               <div className="relative overflow-hidden rounded-t-lg">
                                 <img
                                   src={material.thumbnail || "/placeholder.svg"}
@@ -423,13 +429,13 @@ export default function MaterialsPage() {
                               </CardContent>
                             </Card>
                           ) : (
-                            <Card className="hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
-                              <CardContent className="p-6">
-                                <div className="flex items-start space-x-4">
+                            <Card className="hover:shadow-lg transition-all p-2 pt-2 duration-300 border-2 hover:border-primary/20">
+                              <CardContent className="md:p-6 p-2">
+                                <div className="flex md:flow-row flex-col">
                                   <img
                                     src={material.thumbnail || "/placeholder.svg"}
                                     alt={material.title}
-                                    className="w-24 h-16 object-cover rounded-lg flex-shrink-0"
+                                    className="md:w-24 w-full md:h-16 mb-4 h-full aspect-video md:aspect-auto object-cover rounded-lg flex-shrink-0"
                                   />
                                   <div className="flex-1 min-w-0">
                                     <div className="flex items-start justify-between mb-2">
@@ -448,23 +454,23 @@ export default function MaterialsPage() {
                                         {material.completed && <Badge className="bg-green-500">✓ Selesai</Badge>}
                                       </div>
                                     </div>
-                                    <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
+                                    <p className="md:text-sm text-xs text-muted-foreground mb-3 line-clamp-2">
                                       {material.description}
                                     </p>
-                                    <div className="flex items-center justify-between">
-                                      <div className="flex items-center text-sm text-muted-foreground">
+                                    <div className="flex md:flex-row flex-wrap items-center justify-between">
+                                      <div className="flex items-center md:text-sm text-xs text-muted-foreground">
                                         <Clock className="w-3 h-3 mr-1" />
                                         {material.duration}
                                         <span className="mx-2">•</span>
-                                        <Badge variant="outline" className="text-xs">
+                                        <Badge variant="outline" className="text-xs bg-white">
                                           {material.category}
                                         </Badge>
                                         <span className="mx-2">•</span>
-                                        <Badge variant="outline" className="text-xs">
+                                        <Badge variant="outline" className="text-xs bg-white">
                                           {material.level}
                                         </Badge>
                                       </div>
-                                      <Button asChild>
+                                      <Button asChild className="md:mt-0 mt-4 md:w-auto w-full">
                                         <Link href={`/learn/frontend/${material.slug}?type=${material.type}`}>
                                           Mulai Belajar
                                         </Link>

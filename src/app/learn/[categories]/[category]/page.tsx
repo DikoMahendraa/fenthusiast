@@ -133,7 +133,7 @@ export default function LearningPage() {
   const searchParams = useSearchParams()
   const router = useRouter()
 
-  const materialId = params["detail-materi"] as string
+  const materialId = params["category"] as string
   const viewType = searchParams.get("type") || "video"
 
   const [currentMaterial, setCurrentMaterial] = useState(materialsData[materialId as keyof typeof materialsData])
@@ -171,7 +171,7 @@ export default function LearningPage() {
     const nextMaterial = materials[currentIndex + 1]
 
     if (nextMaterial) {
-      router.push(`/learn/${params["nama-materi"]}/${nextMaterial.id}?type=${viewType}`)
+      router.push(`/learn/${params["categories"]}/${nextMaterial.id}?type=${viewType}`)
     }
   }
 
@@ -180,7 +180,7 @@ export default function LearningPage() {
     const prevMaterial = materials[currentIndex - 1]
 
     if (prevMaterial) {
-      router.push(`/learn/${params["nama-materi"]}/${prevMaterial.id}?type=${viewType}`)
+      router.push(`/learn/${params["categories"]}/${prevMaterial.id}?type=${viewType}`)
     }
   }
 
@@ -196,7 +196,7 @@ export default function LearningPage() {
           materials={materials}
           currentMaterialId={materialId}
           onMaterialSelect={(id) => {
-            router.push(`/learn/${params["nama-materi"]}/${id}?type=${viewType}`)
+            router.push(`/learn/${params["categories"]}/${id}?type=${viewType}`)
           }}
         />
 
@@ -239,6 +239,7 @@ export default function LearningPage() {
               >
                 {viewType === "video" ? (
                   <VideoPlayer
+                    materialId={materialId}
                     videoUrl={currentMaterial.videoUrl}
                     title={currentMaterial.title}
                     onVideoEnd={handleVideoEnd}

@@ -137,7 +137,7 @@ export default function GoalsPage() {
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <Label htmlFor="title">Judul Target</Label>
+                        <Label className="mb-2" htmlFor="title">Judul Target</Label>
                         <Input
                           id="title"
                           value={newGoal.title}
@@ -146,7 +146,7 @@ export default function GoalsPage() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="description">Deskripsi</Label>
+                        <Label className="mb-2" htmlFor="description">Deskripsi</Label>
                         <Input
                           id="description"
                           value={newGoal.description}
@@ -155,7 +155,7 @@ export default function GoalsPage() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="targetDate">Target Tanggal</Label>
+                        <Label className="mb-2" htmlFor="targetDate">Target Tanggal</Label>
                         <Input
                           id="targetDate"
                           type="date"

@@ -23,7 +23,6 @@ export default function RegisterPage() {
     email: "",
     password: "",
     confirmPassword: "",
-    agreeToTerms: false,
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const router = useRouter()
@@ -49,10 +48,6 @@ export default function RegisterPage() {
 
     if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = "Konfirmasi password tidak cocok"
-    }
-
-    if (!formData.agreeToTerms) {
-      newErrors.terms = "Anda harus menyetujui syarat dan ketentuan"
     }
 
     setErrors(newErrors)
@@ -150,9 +145,8 @@ export default function RegisterPage() {
                     placeholder="Masukkan nama lengkap"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`pl-10 h-11 border-2 transition-colors ${
-                      errors.name ? "border-destructive" : "focus:border-primary"
-                    }`}
+                    className={`pl-10 h-11 border-2 transition-colors ${errors.name ? "border-destructive" : "focus:border-primary"
+                      }`}
                     required
                   />
                 </div>
@@ -173,9 +167,8 @@ export default function RegisterPage() {
                     placeholder="nama@email.com"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className={`pl-10 h-11 border-2 transition-colors ${
-                      errors.email ? "border-destructive" : "focus:border-primary"
-                    }`}
+                    className={`pl-10 h-11 border-2 transition-colors ${errors.email ? "border-destructive" : "focus:border-primary"
+                      }`}
                     required
                   />
                 </div>
@@ -196,9 +189,8 @@ export default function RegisterPage() {
                     placeholder="Minimal 6 karakter"
                     value={formData.password}
                     onChange={handleInputChange}
-                    className={`pl-10 pr-10 h-11 border-2 transition-colors ${
-                      errors.password ? "border-destructive" : "focus:border-primary"
-                    }`}
+                    className={`pl-10 pr-10 h-11 border-2 transition-colors ${errors.password ? "border-destructive" : "focus:border-primary"
+                      }`}
                     required
                   />
                   <button
@@ -226,9 +218,8 @@ export default function RegisterPage() {
                     placeholder="Ulangi password"
                     value={formData.confirmPassword}
                     onChange={handleInputChange}
-                    className={`pl-10 pr-10 h-11 border-2 transition-colors ${
-                      errors.confirmPassword ? "border-destructive" : "focus:border-primary"
-                    }`}
+                    className={`pl-10 pr-10 h-11 border-2 transition-colors ${errors.confirmPassword ? "border-destructive" : "focus:border-primary"
+                      }`}
                     required
                   />
                   <button
@@ -241,34 +232,6 @@ export default function RegisterPage() {
                 </div>
                 {errors.confirmPassword && <p className="text-xs text-destructive">{errors.confirmPassword}</p>}
               </div>
-
-              {/* Terms Agreement */}
-              <div className="flex items-start space-x-2">
-                <Checkbox
-                  id="terms"
-                  checked={formData.agreeToTerms}
-                  onCheckedChange={(checked) => {
-                    setFormData((prev) => ({ ...prev, agreeToTerms: checked as boolean }))
-                    if (errors.terms) {
-                      setErrors((prev) => ({ ...prev, terms: "" }))
-                    }
-                  }}
-                  className="mt-1"
-                />
-                <div className="text-sm">
-                  <Label htmlFor="terms" className="cursor-pointer">
-                    Saya menyetujui{" "}
-                    <Link href="/terms" className="text-primary hover:underline">
-                      Syarat & Ketentuan
-                    </Link>{" "}
-                    dan{" "}
-                    <Link href="/privacy" className="text-primary hover:underline">
-                      Kebijakan Privasi
-                    </Link>
-                  </Label>
-                </div>
-              </div>
-              {errors.terms && <p className="text-xs text-destructive">{errors.terms}</p>}
 
               {/* Submit Button */}
               <Button type="submit" className="w-full h-11 text-base group" disabled={isLoading}>
@@ -293,7 +256,7 @@ export default function RegisterPage() {
                 <div className="w-full border-t border-muted" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">Atau daftar dengan</span>
+                <span className="px-2 text-muted-foreground">Atau daftar dengan</span>
               </div>
             </div>
 

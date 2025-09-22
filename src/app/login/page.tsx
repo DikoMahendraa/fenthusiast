@@ -159,7 +159,7 @@ export default function LoginPage() {
                 <div className="w-full border-t border-muted" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">Atau</span>
+                <span className="px-2 text-muted-foreground">Atau</span>
               </div>
             </div>
 

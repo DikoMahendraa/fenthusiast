@@ -39,19 +39,9 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Ahmad Rizki",
-      role: "Founder & Lead Instructor",
-      description: "Full-stack developer dengan 8+ tahun pengalaman di industri tech.",
-    },
-    {
-      name: "Sari Dewi",
-      role: "UI/UX Design Instructor",
-      description: "Design expert yang telah bekerja dengan berbagai startup unicorn.",
-    },
-    {
-      name: "Budi Santoso",
-      role: "Backend Specialist",
-      description: "System architect dengan expertise di cloud computing dan microservices.",
+      name: "Andiko Mahendra",
+      role: "Founder & Frontend Engineer",
+      description: "Frontend developer dengan 5+ tahun pengalaman di industri tech dalam dan luar negeri.",
     },
   ]
 
@@ -161,7 +151,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="flex justify-center mx-auto lg:max-w-sm max-w-full">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}

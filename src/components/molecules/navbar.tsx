@@ -17,8 +17,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 const navItems = [
-  { href: "/learn", label: "Learn" },
-  { href: "/goals", label: "Goals" },
+  { href: "/learn", label: "Materi" },
+  { href: "/goals", label: "Target" },
   { href: "/about", label: "Tentang" },
 ]
 
@@ -103,7 +103,7 @@ export function Navbar() {
             ) : (
               <>
                 <Button variant="ghost" asChild>
-                  <Link href="/login">Login</Link>
+                  <Link href="/login">Masuk</Link>
                 </Button>
                 <Button asChild>
                   <Link href="/register">Daftar</Link>

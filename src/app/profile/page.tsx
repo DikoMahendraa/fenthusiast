@@ -266,7 +266,7 @@ export default function ProfilePage() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <Button
-                    className="w-full justify-start bg-transparent"
+                    className="w-full justify-start bg-white"
                     variant="outline"
                     onClick={() => router.push("/learn")}
                   >
@@ -274,7 +274,7 @@ export default function ProfilePage() {
                     Lanjutkan Belajar
                   </Button>
                   <Button
-                    className="w-full justify-start bg-transparent"
+                    className="w-full justify-start bg-white"
                     variant="outline"
                     onClick={() => router.push("/goals")}
                   >
