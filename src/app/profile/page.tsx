@@ -11,7 +11,7 @@ import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Navbar } from "@/components/molecules/navbar"
-import { userProgressAtom, completedMaterialsAtom, totalMaterialsAtom, progressPercentageAtom } from "@/src/lib/atoms"
+import { userProgressAtom, completedMaterialsAtom, totalMaterialsAtom, progressPercentageAtom } from "@/lib/atoms"
 
 interface UserData {
   name: string
@@ -160,10 +160,10 @@ export default function ProfilePage() {
                         >
                           <div
                             className={`w-2 h-2 rounded-full ${material.completed
-                                ? "bg-green-500"
-                                : material.progress > 50
-                                  ? "bg-blue-500"
-                                  : "bg-primary"
+                              ? "bg-green-500"
+                              : material.progress > 50
+                                ? "bg-blue-500"
+                                : "bg-primary"
                               }`}
                           />
                           <div className="flex-1">

@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Navbar } from "@/components/molecules/navbar"
 import { ProgressDashboard } from "@/components/organisms/progress-dashboard"
-import { userProgressAtom } from "@/src/lib/atoms"
+import { userProgressAtom } from "@/lib/atoms"
 
 interface Goal {
   id: string
